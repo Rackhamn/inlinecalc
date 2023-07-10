@@ -20,7 +20,7 @@ EOF			= 13
 
 class Token(object):
 	__slots__ = ['type', 'value']
-
+	
 	def __init__(self, type, value):
 		self.type = type
 		self.value = value
