@@ -18,9 +18,13 @@ CSTR		= 11	# functor / constant
 ILLEGAL		= 12	# not yet implemented ... -> error
 EOF			= 13
 
+# extra:
+A2R			= 0.017453293	# x * (pi/180)
+R2A			= 57.295779513	# x * (180/pi)
+
 class Token(object):
 	__slots__ = ['type', 'value']
-	
+
 	def __init__(self, type, value):
 		self.type = type
 		self.value = value
@@ -421,6 +425,12 @@ class Interpreter(NodeVisitor):
 
 			if cstr == "log10":
 				return math.log10(data[0])
+
+			if cstr == "rad":
+				return data[0] * Decimal(A2R)
+
+			if cstr == "deg":
+				return data[0] * Decimal(R2A)
 
 		if len(data) >= 1:
 			if cstr == "ln":

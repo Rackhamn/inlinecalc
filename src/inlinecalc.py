@@ -10,11 +10,6 @@ import rp # solve_texts()
 USER_KEYS		= ('Return', 'ISO_Enter') # 'section'
 MENU_PATH		= "/MenuBar/ToolsMenu/ToolsOps_2"
 
-class Calculation(object):
-	def __init__(self, input, answer):
-		self.input = input
-		self.answer = self.answer
-
 class InlineCalc(GObject.Object, Xed.WindowActivatable):
 	__gtype_name__ = "InlineCalc"
 	window = GObject.property(type=Xed.Window)
@@ -158,9 +153,7 @@ class InlineCalc(GObject.Object, Xed.WindowActivatable):
 
 		# copy the string into line
 		line = buf.get_text(it, end, False)
-
 		result = rp.solve_text(line)
-		self.calculations.append([str(line), str(result)])
 
 		if result == None:
 			return False
