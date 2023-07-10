@@ -1,0 +1,11 @@
+[Plugin]
+Loader=python3
+Module=inlinecalc
+IAge=3
+Name=Inline Calc
+Description=A small inline calculator that runs in all your documents little lines. Type your expression and run it with <Ctrl>+<Enter>
+Icon=gnome-mime-text-x-python
+Authors=Carl Blumenthal <carl.m.blumenthal@gmail.com>
+Copyright=Copyright @ 2023 Carl Blumenthal
+Version=1.0
+Builtin=false
